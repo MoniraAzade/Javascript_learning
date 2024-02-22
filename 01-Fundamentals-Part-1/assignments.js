@@ -145,11 +145,21 @@ function percentageOfWorld1 (population){   //use function declarations
 // console.log(percentageOfBangladesh3 , percentageOfPortugal3, percentageOfChina3);
 
 // #Functions Calling Other Functions#
-const describePopulation = function (country, population){
-    const percentage = percentageOfWorld1 (population);
-    const description = `${country} has ${population} million people, which is about ${percentage}% of the world.`;
-    console.log(description);
-  };
-describePopulation('Bangladesh', 169.4);
-describePopulation('Portugal', 16);
-describePopulation('China', 1441);
+// const describePopulation = function (country, population){
+//     const percentage = percentageOfWorld1 (population);
+//     const description = `${country} has ${population} million people, which is about ${percentage}% of the world.`;
+//     console.log(description);
+//   };
+// describePopulation('Bangladesh', 169.4);
+// describePopulation('Portugal', 16);
+// describePopulation('China', 1441);
+
+// #Introduction to Arrays#
+const populations = [169.4 , 16, 1441, 30];
+console.log(populations.length === 4);
+
+const percentages = [percentageOfWorld1(populations[0]),
+                      percentageOfWorld1(populations[1]),
+                      percentageOfWorld1(populations[2]),
+                      percentageOfWorld1(populations[3])];
+console.log(percentages);

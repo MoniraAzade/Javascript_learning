@@ -39,11 +39,11 @@ const num = Number('23'); */
 // Function Declarations vs. Expressions
 
 //  Function declaretion
-function calcAge1(birthYear){
-    //const age = 2037 - birthYear;
-    return 2037 - birthYear;
-}
-const age1 = calcAge1(1991);
+// function calcAge1(birthYear){
+//     //const age = 2037 - birthYear;
+//     return 2037 - birthYear;
+// }
+// const age1 = calcAge1(1991);
 
 
 // Function Expression
@@ -91,12 +91,12 @@ const age1 = calcAge1(1991);
 ///////////////////////////////////////
 // Reviewing Functions
 /*
-const calcAge = function (birthYeah) {
-    return 2037 - birthYeah;
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
   }
   
-  const yearsUntilRetirement = function (birthYeah, firstName) {
-    const age = calcAge(birthYeah);
+  const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
     const retirement = 65 - age;
   
     if (retirement > 0) {
@@ -140,3 +140,83 @@ const calcAge = function (birthYeah) {
 // scoreKoalas = calcAverage(23, 34, 27);
 // console.log(scoreDolphins, scoreKoalas);
 // checkWinner(scoreDolphins, scoreKoalas);
+
+///////////////////////////////////////
+// Introduction to Arrays
+
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// const  years  = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+// console.log(friends.length);  /*here length count how many elements are in array.
+//                                 length is property. */
+// console.log(friends[friends.length - 1]); //[friends.length - 1] its an expression cz we know expression give a value.
+
+// friends[2] = 'Jay';
+// console.log(friends);
+// // friends = ['Bob', 'Alice'];
+
+// const firstName = 'Jonas';
+// const jonas = [firstName, 'Schemtmann', 2037 - 1991, 'teacher', friends];
+// console.log(jonas);
+// console.log(jonas.length);
+
+// //Example:
+// const calcAge = function(birthYear){
+//   return 2037 - birthYear;
+// }
+// const year = [1990, 1967, 2002, 2010, 2018];
+
+// const age1 = calcAge(year[0]);
+// const age2 = calcAge(year[1]);
+// const age3 = calcAge(year[year.length - 1]);
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(year[0]), calcAge(year[1]), calcAge(year[year.length - 1])];
+// //here we create a new arrow in above and in array we put 3 expression that gives 3 values. and its length is 3.
+// console.log(ages);
+
+// Basic Array Operations (Methods)
+// Add  elements are -> push , unshift
+const friends = ['Michael', 'Steven', 'Peter'];
+// const newLength = friends.push('Jay'); //push method adds elements to the end of an array. 
+// // we call that push function directly on the friends array.
+//  //if we want to know the new length than we put it in the variable.
+// console.log(friends);
+// console.log(newLength);
+
+// friends.unshift('John'); //unshift method aad to the begining of the array
+// console.log(friends);
+
+// Remove elements -> pop , shift
+
+// friends.pop();//Last  // this method is the opposite of the push method .
+// // so its remove the last element of the array.
+// // but its return the the removed element.
+// const popped = friends.pop();
+// console.log(friends);
+// console.log(popped);
+
+// friends.shift(); //First //remove the first element of array.
+// console.log(friends);
+
+// check Index or position of array . these are -> indexOf , includes
+
+// console.log(friends.indexOf('Steven')); //output will be 1 cz its index cz steven is indeed.
+// console.log(friends.indexOf('Bob')); // output will be -1 cz there is no element called bob.
+
+// friends.push(23);
+console.log(friends.includes('Steven')); // it can be true cz steven is existing in this array.
+console.log(friends.includes('Bob'));  //it can be false cz Bob not existing in this array.
+// console.log(friends.includes(23));
+
+if (friends.includes('Steven')){
+  console.log('You have a friend called Steven');
+}
