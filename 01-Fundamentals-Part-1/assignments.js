@@ -55,8 +55,8 @@
 
 // //                                   //use loose equality == for now).
 // // if(numNeighbours === 1){          //Change == to ===
-// //   console.log('Only 1 border!');    
-// // }else if(numNeighbours > 1){          
+// //   console.log('Only 1 border!');
+// // }else if(numNeighbours > 1){
 // //   console.log( 'More than 1 border');
 // // }else{
 // //   console.log('No borders');     //this block will be executed when numNeighbours is 0 or any other value).
@@ -77,7 +77,7 @@
 //   console.log(`${country} does not meet your criteria :('`);
 // }
 
-// // The switch Statement 
+// // The switch Statement
 // //It's an alternative to using multiple if-else statements when you need to compare a single value against multiple possible values.
 // /*The expression is evaluated once.
 // -> The value of the expression is compared with the values of each case.
@@ -86,7 +86,7 @@
 //  */
 
 // switch (language){
-//   case 'chinese': 
+//   case 'chinese':
 //   case 'mandarin':
 //        console.log('MOST number of native speakers!');
 //        break;
@@ -109,8 +109,6 @@
 // //The Conditional(Ternary) Operator
 // console.log(`${country}'s population is ${population > 33 ? 'above' : 'below'} average`);
 
-
-
 //JavaScript Fundamentals - Part 2
 
 // // # Functions #
@@ -123,9 +121,10 @@
 // console.log(describeBangladesh , describePortugal, describeFinland);
 
 // // #Functiontion Declarations Vs Expressions#
-function percentageOfWorld1 (population){   //use function declarations
-  return (population / 7900) * 100;
-};
+// function percentageOfWorld1(population) {
+//   //use function declarations
+//   return (population / 7900) * 100;
+//}
 
 // const percentageOfWorld2 = function (population){   //use function expressions
 //   return (population / 7900) * 100;
@@ -155,11 +154,73 @@ function percentageOfWorld1 (population){   //use function declarations
 // describePopulation('China', 1441);
 
 // #Introduction to Arrays#
-const populations = [169.4 , 16, 1441, 30];
-console.log(populations.length === 4);
+// const populations = [169.4 , 16, 1441, 30];
+// console.log(populations.length === 4);
 
-const percentages = [percentageOfWorld1(populations[0]),
-                      percentageOfWorld1(populations[1]),
-                      percentageOfWorld1(populations[2]),
-                      percentageOfWorld1(populations[3])];
-console.log(percentages);
+// const percentages = [percentageOfWorld1(populations[0]),
+//                       percentageOfWorld1(populations[1]),
+//                       percentageOfWorld1(populations[2]),
+//                       percentageOfWorld1(populations[3])];
+// console.log(percentages);
+
+// #Basic Array Operations (Methods)#
+
+// const neighbours = ["Bangladesh", "Sweden", "China"];
+
+// neighbours.push("Utopia");
+// console.log(neighbours);
+
+// neighbours.pop();
+// console.log(neighbours);
+
+// if (!neighbours.includes("Germany")) {
+//   console.log("Probably not a central european country :D");
+// }
+// neighbours[neighbours.indexOf("Sweden")] = "Republic of Sweden;";
+// console.log(neighbours);
+
+// #Introduction to Objects#
+// const myCountry = {
+//   country: "Bangladesh",
+//   capital: "Dhaka",
+//   language: "Bangla",
+//   population: 169.4,
+//   neighbours: ["India", "Pakistan", "Nepal"],
+// };
+// #Dot vs. Bracket Notation
+// console.log(
+//   `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+// );
+// //using dot notation 
+// myCountry.population += 2;
+// console.log(myCountry.population);
+
+// //using bracket notation
+// myCountry['population'] -=2 ;
+// console.log(myCountry.population);
+
+// #Object Methods#
+const myCountry = {
+  country: "Bangladesh",
+  capital: "Dhaka",
+  language: "Bangla",
+  population: 169.4,
+  neighbours: ["India", "Pakistan", "Nepal"],
+  decribe : function() {
+    console.log(
+         `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
+       );
+  },
+  checkIsland : function() {
+     this.isIsland = this.neighbours.length === 0 ? true : false;
+  // this.isIsland = !Boolean(this.neighbours.length);
+  }
+};
+myCountry.decribe();
+myCountry.checkIsland();
+console.log(myCountry);
+
+
+
+
+

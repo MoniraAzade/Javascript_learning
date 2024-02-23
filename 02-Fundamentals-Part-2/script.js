@@ -185,7 +185,7 @@ const calcAge = function (birthYear) {
 
 // Basic Array Operations (Methods)
 // Add  elements are -> push , unshift
-const friends = ['Michael', 'Steven', 'Peter'];
+// const friends = ['Michael', 'Steven', 'Peter'];
 // const newLength = friends.push('Jay'); //push method adds elements to the end of an array. 
 // // we call that push function directly on the friends array.
 //  //if we want to know the new length than we put it in the variable.
@@ -213,10 +213,121 @@ const friends = ['Michael', 'Steven', 'Peter'];
 // console.log(friends.indexOf('Bob')); // output will be -1 cz there is no element called bob.
 
 // friends.push(23);
-console.log(friends.includes('Steven')); // it can be true cz steven is existing in this array.
-console.log(friends.includes('Bob'));  //it can be false cz Bob not existing in this array.
-// console.log(friends.includes(23));
+// console.log(friends.includes('Steven')); // it can be true cz steven is existing in this array.
+// console.log(friends.includes('Bob'));  //it can be false cz Bob not existing in this array.
+// // console.log(friends.includes(23));
 
-if (friends.includes('Steven')){
-  console.log('You have a friend called Steven');
-}
+// if (friends.includes('Steven')){
+//   console.log('You have a friend called Steven');
+// }
+
+ ///////////////////////////////////////
+  // Coding Challenge #2
+/*
+const calcTip = function (bill){
+     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20; 
+};
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(bills, tips, totals);
+*/
+
+// #Introduction to Objects#
+
+//for example when we use array
+// const jonasArray = [
+//   'Jonas',
+//   'Schmedtmann',
+//   2037 - 1991,
+//   'teacher',
+//   ['Michael', 'Peter', 'Steven']
+// ];
+// //when we use Object
+// const Jonas = {   // here Jonas is an object we create
+//   firstName: 'Jonas',  //firstName,lastName,age,job,friends -> are key or properties.
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven']
+// };
+
+//Dot vs. Bracket Notation
+// const jonas = {   // here Jonas is an object we create
+//   firstName: 'Jonas',  //firstName,lastName,age,job,friends -> are key or properties.
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven']
+//};
+// console.log(jonas);
+
+// console.log(jonas.lastName); /*this (.)dot an operator which will go to this object with the name that we specified here as Jonas.
+//                                  this called dot notation.*/
+// console.log(jonas['lastName']);
+
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey]); //we could put any expression here with this box bracket . this called deep bracket notation
+// console.log(jonas['last' + nameKey]);
+
+// lets example
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends.');
+// console.log(jonas[interestedIn]);
+
+// if(jonas[interestedIn]){
+//   console.log(jonas[interestedIn]);
+// }else{
+//   console.log('Wrong request! Choose between firstName, lastName, age, job and friends.');
+// };
+
+// jonas.location =' Portugal';
+// jonas['twitter'] = '@jonasschmedtmann';
+// console.log(jonas);
+
+// Challenge of this lecture.
+// console.log(`${jonas.firstName} has  ${jonas.friends.length} friends,and his best friend is called ${jonas.friends[0]}`);
+
+//Object Methods
+// Any function that is attached to an object  is called a method.
+const jonas = {   // here Jonas is an object we create
+  firstName: 'Jonas',  //firstName,lastName,age,job,friends -> are key or properties.
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear){ //here we can call this function is method cz its attached by the property name calcAge to an object 
+  //   return 2037 - birthYear;
+  // }
+
+  // calcAge: function (){ 
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // }
+
+  calcAge: function (){ 
+    this.age = 2037 - this.birthYear ; //here through dot notation we can create new property. ex: .age
+    return this.age ;
+  },  // Note : we need comma between all properties in obeject.
+  getSummery: function (){
+     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+  }
+
+};
+/*
+const calcAge = function (birthYear){  //its a function declarations. we can't used in here.
+  return 2037 - birthYear
+} */
+
+console.log(jonas.calcAge());    //using dot notaion.
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+// console.log(jonas['calcAge'](1991));     //using bracket notation.
+
+
+// Challenge of this lecture
+//"Jonas is a 46-year old teacher, and he has a driver's license"
+console.log(jonas.getSummery());
