@@ -200,27 +200,31 @@
 // console.log(myCountry.population);
 
 // #Object Methods#
-const myCountry = {
-  country: "Bangladesh",
-  capital: "Dhaka",
-  language: "Bangla",
-  population: 169.4,
-  neighbours: ["India", "Pakistan", "Nepal"],
-  decribe : function() {
-    console.log(
-         `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
-       );
-  },
-  checkIsland : function() {
-     this.isIsland = this.neighbours.length === 0 ? true : false;
-  // this.isIsland = !Boolean(this.neighbours.length);
-  }
-};
-myCountry.decribe();
-myCountry.checkIsland();
-console.log(myCountry);
+// const myCountry = {
+//   country: "Bangladesh",
+//   capital: "Dhaka",
+//   language: "Bangla",
+//   population: 169.4,
+//   neighbours: ["India", "Pakistan", "Nepal"],
+//   decribe : function() {
+//     console.log(
+//          `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
+//        );
+//   },
+//   checkIsland : function() {
+//      this.isIsland = this.neighbours.length === 0 ? true : false;
+//   // this.isIsland = !Boolean(this.neighbours.length);
+//   }
+// };
+// myCountry.decribe();
+// myCountry.checkIsland();
+// console.log(myCountry);
 
-
+// #Iteration: The for Loop#
+//'Voter number 1 is currently voting'
+for (let voter = 1; voter <= 50; voter ++){
+  console.log(`Voter number ${voter} is currently voting`);
+}
 
 
 
