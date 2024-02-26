@@ -121,10 +121,10 @@
 // console.log(describeBangladesh , describePortugal, describeFinland);
 
 // // #Functiontion Declarations Vs Expressions#
-// function percentageOfWorld1(population) {
-//   //use function declarations
-//   return (population / 7900) * 100;
-//}
+function percentageOfWorld1(population) {
+  //use function declarations
+  return (population / 7900) * 100;
+}
 
 // const percentageOfWorld2 = function (population){   //use function expressions
 //   return (population / 7900) * 100;
@@ -191,7 +191,7 @@
 // console.log(
 //   `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
 // );
-// //using dot notation 
+// //using dot notation
 // myCountry.population += 2;
 // console.log(myCountry.population);
 
@@ -222,9 +222,42 @@
 
 // #Iteration: The for Loop#
 //'Voter number 1 is currently voting'
-for (let voter = 1; voter <= 50; voter ++){
-  console.log(`Voter number ${voter} is currently voting`);
+// for (let voter = 1; voter <= 50; voter ++){
+//   console.log(`Voter number ${voter} is currently voting`);
+// }
+
+// #Looping Arrays, Breaking and Continuing#
+const populations = [169.4 , 16, 1441, 30];
+// const percentages2 = [];
+
+// for (let i = 0; i < populations.length; i++) {
+//   const perc = percentageOfWorld1(populations[i]);
+//   percentages2.push(perc);
+// }
+
+// console.log(percentages2);
+
+// const listOfNeighbours = [
+//   ["Canada", "Mexico"],
+//   ["Spain"],
+//   ["Norway", "Sweden", "Russia"],
+// ];
+
+// for (let i = 0; i < listOfNeighbours.length; i++) {        // first array length 3 
+//   for (let y = 0; y < listOfNeighbours[i].length; y++) {
+//     console.log(`Neighbour: ${listOfNeighbours[i][y]}`);      
+//   }
+// }
+//console.log(listOfNeighbours.length);
+
+// #The While Loop#
+const percentages3 = [];
+
+let i = 0;
+while (i < populations.length) {
+  const perc = percentageOfWorld1(populations[i]);
+  percentages3.push(perc);
+  i++;
 }
 
-
-
+console.log(percentages3);

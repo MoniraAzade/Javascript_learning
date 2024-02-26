@@ -392,47 +392,118 @@ console.log(bills, tips, totals);
 // }
 
 //Looping Arrays,Breaking and Continuing 
-const jonas = [
-    'Jonas',
-    'Schmedtmann',
-    2037 - 1991,
-    'teacher',
-    ['Michael', 'Peter', 'Steven'],
-    true,
-  ];
-const types = [];
-// console.log(jonas[0])
-// console.log(jonas[1])
-// ...
-// console.log(jonas[4])
-// jonas[5]  does NOT exist
-for (let i = 0; i < jonas.length; i++){ 
-  // Reading from  jonas Array.   //here jonas.length are the length of Array.
-  console.log(jonas[i], typeof jonas[i]);
-  // Filling types array
-  // types[i] = typeof jonas[i];
-  types.push(typeof jonas[i]);            //['string', 'string', 'number', 'string', 'object', 'boolean']
+// const jonas = [
+//     'Jonas',
+//     'Schmedtmann',
+//     2037 - 1991,
+//     'teacher',
+//     ['Michael', 'Peter', 'Steven'],
+//     true,
+//   ];
+// const types = [];
+// // console.log(jonas[0])
+// // console.log(jonas[1])
+// // ...
+// // console.log(jonas[4])
+// // jonas[5]  does NOT exist
+// for (let i = 0; i < jonas.length; i++){ 
+//   // Reading from  jonas Array.   //here jonas.length are the length of Array.
+//   console.log(jonas[i], typeof jonas[i]);
+//   // Filling types array
+//   // types[i] = typeof jonas[i];
+//   types.push(typeof jonas[i]);            //['string', 'string', 'number', 'string', 'object', 'boolean']
+// }
+// console.log(types);   
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < years.length; i++){
+//   ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+// //continue and break
+// console.log('--- ONLY STRINGS ---')
+// for (let i = 0; i < jonas.length; i++){
+//   if (typeof jonas[i] !== 'string') continue;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log('--- BREAK WITH NUMBER ---')
+// for (let i = 0; i < jonas.length; i++){
+//   if (typeof jonas[i] !== 'string') continue;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// Looping BackWards and Loops in Loops
+// const jonas = [
+//   'Jonas',
+//   'Schmedtmann',
+//   2037 - 1991,
+//   'teacher',
+//   ['Michael', 'Peter', 'Steven'],
+//   true
+// ];
+// // o, 1,... , 4
+// // 4, 3,..., 0
+// for(let i = jonas.length - 1; i >= 0; i--){
+//   console.log(i, jonas[i]);
+// }
+
+// // Loops in Loops
+// for (let exercise = 1; exercise < 4; exercise++){
+//   console.log(`------------Starting exercise ${exercise}`);
+
+//   for (let rep = 1; rep < 6; rep++){
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+//   }
+// }
+
+/////The While Loop 
+/* Note : while loop : it will run while this condition is true.
+    while loop need a condiotion . no need any counter like (let rep = 1; ) */
+
+//For Loop    
+// for (let rep = 1; rep <= 10; rep++ ){  //using for loop.
+//   console.log(`Lifting weights repetition ${rep}`);
+// };
+
+//While loop
+// let rep = 1;
+// while(rep <= 10){
+//   console.log(`While: Lifting weights repetition ${rep}`);
+//   rep++;
+// };
+
+// let dice = Math.trunc(Math.random() * 6) + 1;  /* Math.random  here math is object and random is method or function . 
+// this function pick random number between 0 to 1like any decimal number . here Math.trunc , Math is an object and trunc is method or function . 
+// this function remove decimal number like 2.890456 -> 2 */
+
+// // console.log(dice);
+// while (dice !== 6){
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1; 
+//   if (dice === 6){
+//     console.log('Loop is about end ...');
+//   }
+// };
+
+// #CODING  CHALLENGE # 4
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
-console.log(types);   
 
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
-for (let i = 0; i < years.length; i++){
-  ages.push(2037 - years[i]);
+/* Write your code below. Good luck! 🙂 */
+const bills = [22,295,176,440,37,105,10,1100,86,52];
+const tips = [];
+const totals = [];
+for(let i = 0; i < bills.length ; i++){
+     const tip = calcTip(bills[i]);
+    //  tips[i] = tip;
+     tips.push(tip);
+     totals.push(bills[i] + tip);
 }
-console.log(ages);
+console.log(bills, tips, totals);
 
-//continue and break
-console.log('--- ONLY STRINGS ---')
-for (let i = 0; i < jonas.length; i++){
-  if (typeof jonas[i] !== 'string') continue;
-
-  console.log(jonas[i], typeof jonas[i]);
-}
-
-console.log('--- BREAK WITH NUMBER ---')
-for (let i = 0; i < jonas.length; i++){
-  if (typeof jonas[i] !== 'string') continue;
-
-  console.log(jonas[i], typeof jonas[i]);
-}
